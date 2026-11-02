@@ -24,6 +24,8 @@ const { wireChildProcessLifecycle } = require("./process-lifecycle");
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { rotatePreviewSecrets, getRotationWarning } = require("./rotate-preview-secrets");
 // eslint-disable-next-line @typescript-eslint/no-require-imports
+require("./patch-next");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { openWhenServing } = require("./browser-opener");
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { createRunRecordTracker, getOpenUrl, getRunDir } = require("./run-records");

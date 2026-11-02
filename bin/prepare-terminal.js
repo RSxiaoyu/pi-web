@@ -4,6 +4,9 @@
 const { chmodSync, statSync } = require("node:fs");
 const { dirname, join } = require("node:path");
 
+// Apply self-healing patch for Next.js null-prototype headers bug
+require("./patch-next");
+
 if (process.platform === "darwin") {
   const root = dirname(require.resolve("node-pty/package.json"));
   for (const directory of ["build/Release", "build/Debug", `prebuilds/darwin-${process.arch}`]) {
